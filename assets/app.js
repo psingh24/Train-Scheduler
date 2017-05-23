@@ -19,12 +19,9 @@ var ref = database.ref();
 // ref.on('value', getData)
 
 // console.log(database)
-var trainName = "";
-var destination = '';
-var fristTrain = "";
-var frequency = ""
+
 var today = moment().format();
-console.log(today)
+// console.log(today)
 
 
 
@@ -50,11 +47,17 @@ ref.on("child_added", function(snapshot) {
 
 
     var data = snapshot.val()
-console.log(fristTrain)
+// console.log(fristTrain)
     var dateDiff = 0
-    var convertedDate = moment(new Date(data.fristTrain));
+    var convertedDate = moment().hour(data.fristTrain);
     // console.log(convertedDate)
     dateDiff = data.fristTrain + data.frequency
+
+    // var now = moment().format("HH:mm A")
+    // console.log(now)
+
+    var next = data.fristTrain.add(data.frequency, "m")
+    console.log(next)
     // console.log(dateDiff)
     // console.log("Today is: " + moment().format() + " start date is: " + convertedDate + " Date dif is: " + dateDiff);
     // var totalRate = dateDiff * data.frequency
@@ -82,44 +85,29 @@ $("#submit").on("click", function(event) {
 
 event.preventDefault();
 
-var mom = moment('171054', 'HHmmss');
-console.log(mom.format());
-console.log(mom.format('HH:mm:ss'));
+// var mom = moment('171054', 'HHmmss');
+// console.log(mom.format());
+// console.log(mom.format('HH:mm:ss'));
 
 
 
-trainName = $("#trainName").val().trim();
-destination = $("#destination").val().trim()
-fristTrain = $("#fristTrain").val().trim();
+var trainName = $("#trainName").val().trim();
+var destination = $("#destination").val().trim()
+var fristTrain = $("#fristTrain").val().trim();
 // console.log(startDate)
+var trainTime = moment(fristTrain, "HH:mm A")
+var trainPretty = moment(trainTime).format("HH:mm A")
+
+var nextArrival = moment(trainTime).diff(moment(), "minutes")
 // var convertedDate = moment(new Date(startDate));
 // startDate.format("DD/MM/YYYY")
-frequency =  $("#frequency").val().trim()
+var frequency =  $("#frequency").val().trim()
 
-
-
-// today = moment(new Date()); //todays date
-// console.log(today)
-// console.log(today)
-// var end = moment(convertedDate);
-// console.log(end) // another date
-// duration = moment(convertedDate).diff(moment(), "months")
-
-// months = duration.asDays();
-// console.log(months)
-
-
-// var sessionsRef = firebase.database().ref("sessions");
-// sessionsRef.push({
-  // startedAt: firebase.database.ServerValue.TIMESTAMP
-// });
-
-// console.log(employeeName, role, startDate, monthlyRate)
 
 database.ref().push( {
     trainName: trainName,
     destination: destination,
-    fristTrain: fristTrain,
+    fristTrain: trainPretty,
     frequency: frequency,
     // monthsWorked: duration
     // totalBilled: 
@@ -134,10 +122,10 @@ database.ref().push( {
 
 
 
-console.log(moment().format())
+// console.log(moment().format())
 
 
-console.log(moment(1318781876));
+// console.log(moment(1318781876));
 
 
 
