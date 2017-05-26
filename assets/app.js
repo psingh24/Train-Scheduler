@@ -78,7 +78,7 @@ function removeTrain() {
 
 }
 
-
+//need to work on this
 $(document).on("click", ".removeTrain", removeTrain)
 
 //Sign In Area=======================================================================//
