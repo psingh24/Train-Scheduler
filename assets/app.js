@@ -106,6 +106,11 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
 });
 }
 
-$(document).on("click", ".signin", googleSignIn)
+// $(document).on("click", ".signin", googleSignIn)
+
+$(".signin").on("click", function(){
+    console.log("hello")
+    googleSignIn();
+})
 
 })
