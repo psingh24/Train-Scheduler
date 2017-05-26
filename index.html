@@ -23,56 +23,69 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-    <div class="row">
-        <div class="col-md-12 jumbotron">
-            <h1 class="text-center"><i class="fa fa-newspaper-o" aria-hidden="true"></i>Employee Data Management</h1>
-        </div>
-        
-    </div>
 
+<div class="login" id="login-page">
+    <div class="container">
+        <div class="row" id="modal-login">
+        		<div class=" col-md-6 col-md-offset-3 modal-content">
+        			<div class="modal-header">
+                        <div class="col-md-3">
+        				<img id="login-logo" class="text-center" src="assets/images/train.jpg" alt="Train">
+                        </div>
+        				<h3 class="modal-title text-center" id="modal-login-label">Welcome to My Train Schedule</h3>
+        				<p class="text-center">Sign In via Google or Github to conitue</p>
+        			</div>
+        			<div class="modal-body">
+	                    <div class="row">
+								<div class="col-md-12 text-center">
+									<button type="submit" data="github" class="signin btn btn-default"><i class="fa fa fa-github" aria-hidden="true"></i> Sign up with Github</button>
+									<button type="submit" data="google" class="signin btn btn-danger"><i class="fa fa-google-plus" aria-hidden="true"></i> Sign up with Google</button>
+								</div>
+							</div>
+				
+        			</div>
+        		</div>
+        </div>
+    </div>    
 </div>
 
 
+ 
 
+<div id="main">
+</main> 
+<div class="row">
+        <div class="col-md-12 jumbotron">
+            <h1 class="text-center"><i class="fa fa-newspaper-o" aria-hidden="true"></i>Train Schedule</h1>
+        </div>
+</div>
+<!--Table Area-->
 <div class="container">
 <div class="row">
         <div class="col-md-12">
-            
-
-            <div class="panel panel-primary">
+            <div class="panel panel-info">
                     <div class="panel-heading">
                        <h3 class="panel-title"><p class="glyphicon glyphicon-list-alt"></p>Current Train Schedule</h3>
                      </div>
 
                      <div class="panel-body">
-                        <!-- <div class="well"> -->
-                         
-<table>
-  <tr>
-    <th>Train Name</th>
-    <th>Destination</th> 
-    <th>Frequency(min)</th>
-    <th>Next Arrival</th>
-    <th>Minutes Away</th>
-   
-
-  </tr>
-
-
-</table>
-                         <!-- </div> -->
-                     </div>
+                      <table>
+                        <tr>
+                            <th>Train Name</th>
+                            <th>Destination</th> 
+                            <th>Frequency(min)</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes Away</th>
+                        </tr>
+                        </table>
                     </div>
-                
-            </div>
+                </div>
         </div>
-
-
-
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-primary">
+</div>
+<!--form Area-->
+<div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info">
 
                     <div class="panel-heading">
                        <h3 class="panel-title "><p class="glyphicon glyphicon-list-alt"></p>Employee Name</h3>
@@ -95,19 +108,14 @@
                         <label>Frequency(min)</label>
                         <input type="text" class="form-control" id="frequency">
                       </div>
-                      
-                      
-        
                       <button  class="btn btn-default" id="submit">Submit</button>
-                     <!-- <button type="button" id="clear" class="btn btn-default"><p class="glyphicon glyphicon-trash"></p>Clear Results</button> -->
                     </form>
                     </div>
-
-            </div>
+                </div>
         </div>
     </div>
-    
-    </div>
+</div>
+</div>
 </div>
 </body>
 </html>

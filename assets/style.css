@@ -1,9 +1,42 @@
 
+     body { background: url("http://eskipaper.com/images/train-track-wallpaper-hd-1.jpg") no-repeat center center fixed;
+       -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover; 
+        background-size: 100% 100%;
+        height: 100%;
+}
+
+/*.jumbotron, .panel {
+    opacity: .8;
+}*/
+        
         table {
             width: 100%
 
         }
+        .train {
+            line-height: 3;
+        }
+
+
         th {
             text-decoration: underline;
 
+        }
+
+        .login {
+            height: 100%;
+        }
+
+        #modal-login {
+              margin: auto;
+            width: 100%;
+            margin-top: 300px;
+        }
+
+        #login-logo {
+            width: 100px;
+        
         }
