@@ -106,9 +106,17 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
 });
 }
 
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log(user.displayName)
+  } else {
+    // No user is signed in.
+  }
+});
 // $(document).on("click", ".signin", googleSignIn)
 
 $(".signin").on("click", function(){
+    event.preventDefault();
     console.log("hello")
     googleSignIn();
 })
