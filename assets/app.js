@@ -85,6 +85,7 @@ $(document).on("click", ".removeTrain", removeTrain)
 //Sign In Area=======================================================================//
 
 var provider = new firebase.auth.GoogleAuthProvider();
+var user = firebase.auth().currentUser;
 function googleSignIn() {
 firebase.auth().signInWithPopup(provider).then(function(result) {
             // This gives you a Google Access Token. You can use it to access the Google API.
@@ -92,7 +93,13 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
             // The signed-in user info.
             var user = result.user;
             console.log(user.displayName)
-           
+           if (user) {
+                // User is signed in.
+                loadMainPage()
+                } else {
+                // No user is signed in.
+                console.log("no one signed in")
+                }
             
             // ...
             }).catch(function(error) {
@@ -107,15 +114,9 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
 });
 }
 
-var user = firebase.auth().currentUser;
 
-if (user) {
-  // User is signed in.
-  loadMainPage()
-} else {
-  // No user is signed in.
-  console.log("no one signed in")
-}
+
+
 
 // $(document).on("click", ".signin", googleSignIn)
 // setTimeout(loadMainPage, 2000)
