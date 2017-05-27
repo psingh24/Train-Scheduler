@@ -123,7 +123,7 @@ $(".signin").on("click", function(){
     console.log("hello")
     googleSignIn();
    
- setTimeout(loadMainPage, 7000)
+ setTimeout(loadMainPage, 10000)
 
 })
 
