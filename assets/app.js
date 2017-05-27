@@ -93,6 +93,7 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
             console.log(user.displayName)
             $("#main").show()
             $("#login-page").hide()
+             event.preventDefault();
             // ...
             }).catch(function(error) {
             // Handle Errors here.
@@ -114,13 +115,13 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-location.reload(false)
 // $(document).on("click", ".signin", googleSignIn)
 
 $(".signin").on("click", function(){
-    event.preventDefault();
     console.log("hello")
     googleSignIn();
+    location.reload(false)
+
 })
 
 })
