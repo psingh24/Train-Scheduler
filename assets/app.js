@@ -111,7 +111,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
       console.log(user.displayName)
     // loadMainPage()
-    setTimeout(loadMainPage, 5000)
+    setTimeout(loadMainPage, 2000)
 
   } else {
     console.log("no user sign in")
