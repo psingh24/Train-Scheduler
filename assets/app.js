@@ -95,7 +95,7 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
            
             
             // ...
-        }).then(function(){
+        }).done(function(){
              loadMainPage()
         
         
