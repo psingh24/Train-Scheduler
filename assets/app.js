@@ -107,16 +107,6 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
 });
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-      console.log(user.displayName)
-    // loadMainPage()
-    setTimeout(loadMainPage, 2000)
-
-  } else {
-    console.log("no user sign in")
-  }
-});
 
 // $(document).on("click", ".signin", googleSignIn)
 
@@ -125,7 +115,16 @@ $(".signin").on("click", function(){
     console.log("hello")
     googleSignIn();
    
-//  setTimeout(loadMainPage, 10000)
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+      console.log(user.displayName)
+    loadMainPage()
+   
+
+  } else {
+    console.log("no user sign in")
+  }
+});
 
 })
 
