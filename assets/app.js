@@ -28,7 +28,7 @@ var nextTrainFormatted;
 ref.on("child_added", function(snapshot) {
     var data = snapshot.val()
     console.log(data)
-    console.log(Object.key)
+    // console.log(Object.key)
     
     var key = ref.key
  console.log(key)
@@ -109,7 +109,7 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    event.preventDefault();
+    loadMainPage()
   } else {
     // No user is signed in.
   }
@@ -122,7 +122,7 @@ $(".signin").on("click", function(){
     console.log("hello")
     googleSignIn();
    
- setTimeout(loadMainPage, 5000)
+//  setTimeout(loadMainPage, 5000)
 
 })
 
