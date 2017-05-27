@@ -27,11 +27,11 @@ var nextTrainFormatted;
 
 ref.on("child_added", function(snapshot) {
     var data = snapshot.val()
-    // console.log(data)
+    console.log(data)
     // console.log(Object.key)
     
     var key = ref.key
-//  console.log(key)
+ console.log(key)
         $("table").append("<tr class='train' id='hello'><td>"+data.trainName+"</td><td>"+data.destination+"</td><td>"+data.frequency+"</td><td>"+data.nextArrival +"</td><td>"+data.nextTrain +"</td><td><button class='removeTrain btn btn-info'>Remove Train</button></td></tr>")
 });
 
@@ -95,7 +95,7 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
            
             
             // ...
-        }).catch(function(error) {
+            }).catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -106,29 +106,26 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
   // ...
 });
 }
-var user;
-function loading(){
-    user = firebase.auth().currentUser;
 
-console.log(user)
-if (user) {
-  // User is signed in.
-  console.log(user.displayName)
-  loadMainPage()
+// firebase.auth().onAuthStateChanged(function(user) {
+//   if (user) {
+//       console.log(user.displayName)
+//     // loadMainPage()
+//     // setTimeout(loadMainPage, 2000)
 
-} else {
-  // No user is signed in.
-}
-}
+//   } else {
+//     console.log("no user sign in")
+//   }
+// });
 
 // $(document).on("click", ".signin", googleSignIn)
-
+// setTimeout(loadMainPage, 2000)
 $(".signin").on("click", function(){
      
     console.log("hello")
     googleSignIn();
-   loading();
-//  setTimeout(loadMainPage, 10000)
+   
+ setTimeout(loadMainPage, 10000)
 
 })
 
