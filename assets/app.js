@@ -27,11 +27,11 @@ var nextTrainFormatted;
 
 ref.on("child_added", function(snapshot) {
     var data = snapshot.val()
-    console.log(data)
+    // console.log(data)
     // console.log(Object.key)
     
     var key = ref.key
- console.log(key)
+//  console.log(key)
         $("table").append("<tr class='train' id='hello'><td>"+data.trainName+"</td><td>"+data.destination+"</td><td>"+data.frequency+"</td><td>"+data.nextArrival +"</td><td>"+data.nextTrain +"</td><td><button class='removeTrain btn btn-info'>Remove Train</button></td></tr>")
 });
 
@@ -108,7 +108,7 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
 }
 
 var user = firebase.auth().currentUser;
-
+console.log(user)
 if (user) {
   // User is signed in.
   console.log(user.displayName)
