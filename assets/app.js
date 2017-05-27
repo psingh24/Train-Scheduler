@@ -82,7 +82,7 @@ function removeTrain() {
 $(document).on("click", ".removeTrain", removeTrain)
 
 //Sign In Area=======================================================================//
- $("#main").hide()
+
 var provider = new firebase.auth.GoogleAuthProvider();
 function googleSignIn() {
 firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -91,8 +91,7 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
             // The signed-in user info.
             var user = result.user;
             console.log(user.displayName)
-            $("#main").show()
-            $("#login-page").hide()
+           
             
             // ...
             }).catch(function(error) {
@@ -118,10 +117,13 @@ firebase.auth().onAuthStateChanged(function(user) {
 // $(document).on("click", ".signin", googleSignIn)
 
 $(".signin").on("click", function(){
+      window.location = 'index.html';
     console.log("hello")
     googleSignIn();
-    // location.reload(false)
+ 
 
 })
+
+ 
 
 })
