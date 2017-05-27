@@ -107,6 +107,16 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
 });
 }
 
+var user = firebase.auth().currentUser;
+
+if (user) {
+  // User is signed in.
+  console.log(user.displayName)
+  loadMainPage()
+
+} else {
+  // No user is signed in.
+}
 
 // $(document).on("click", ".signin", googleSignIn)
 
@@ -115,16 +125,7 @@ $(".signin").on("click", function(){
     console.log("hello")
     googleSignIn();
    
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-      console.log(user.displayName)
-    loadMainPage()
-   
-
-  } else {
-    console.log("no user sign in")
-  }
-});
+//  setTimeout(loadMainPage, 10000)
 
 })
 
