@@ -118,10 +118,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 // $(document).on("click", ".signin", googleSignIn)
 
 $(".signin").on("click", function(){
-      window.location = 'index.html';
+     
     console.log("hello")
     googleSignIn();
- 
+  window.location = 'index.html';
 
 })
 
