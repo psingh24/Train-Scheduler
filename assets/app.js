@@ -111,6 +111,8 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
       console.log(user.displayName)
     // loadMainPage()
+    setTimeout(loadMainPage, 5000)
+
   } else {
     console.log("no user sign in")
   }
@@ -123,7 +125,7 @@ $(".signin").on("click", function(){
     console.log("hello")
     googleSignIn();
    
- setTimeout(loadMainPage, 10000)
+//  setTimeout(loadMainPage, 10000)
 
 })
 
