@@ -109,9 +109,10 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    loadMainPage()
+      console.log(user.displayName)
+    // loadMainPage()
   } else {
-    // No user is signed in.
+    console.log("no user sign in")
   }
 });
 
@@ -122,7 +123,7 @@ $(".signin").on("click", function(){
     console.log("hello")
     googleSignIn();
    
-//  setTimeout(loadMainPage, 5000)
+ setTimeout(loadMainPage, 7000)
 
 })
 
