@@ -121,7 +121,7 @@ $(".signin").on("click", function(){
      
     console.log("hello")
     googleSignIn();
-  window.location = 'index.html';
+  window.location = 'main.html';
 
 })
 
