@@ -120,7 +120,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 $(".signin").on("click", function(){
     console.log("hello")
     googleSignIn();
-    location.reload(false)
+    // location.reload(false)
 
 })
 
