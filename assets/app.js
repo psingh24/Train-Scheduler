@@ -24,27 +24,22 @@ var minTillNextTrain;
 var nextTrain; 
 var nextTrainFormatted; 
 
-
+// fetch each child in the database and append them on the page
 ref.on("child_added", function(snapshot) {
     var data = snapshot.val()
-    console.log(data)
-    // console.log(Object.key)
-    
-    var key = ref.key
- console.log(key)
         $("table").append("<tr class='train' id='hello'><td>"+data.trainName+"</td><td>"+data.destination+"</td><td>"+data.frequency+"</td><td>"+data.nextArrival +"</td><td>"+data.nextTrain +"</td><td><button class='removeTrain btn btn-info'>Remove Train</button></td></tr>")
 });
 
+//On submit click....
 $("#submit").on("click", function(event) {
-
-    event.preventDefault();
+     event.preventDefault();
 
     trainName = $("#trainName").val().trim();
     destination = $("#destination").val().trim()
     firstTrain = $("#fristTrain").val().trim();
     frequency =  parseInt($("#frequency").val().trim())
 
-
+    //Time conversion
     firstTimeConverted = moment(firstTrain, "hh:mm");
     diffTime = moment().diff(moment(firstTimeConverted), "minutes");
     Remainder = diffTime % frequency;
@@ -69,7 +64,7 @@ $("#submit").on("click", function(event) {
         $("#frequency").val('')
 
     })
-
+// Remove train fuction, need to figure out how to remove from database as well
 function removeTrain() {
     
      $(this).closest('tr').remove();
@@ -114,21 +109,13 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
 });
 }
 
-
-
-
-
-// $(document).on("click", ".signin", googleSignIn)
-// setTimeout(loadMainPage, 2000)
+// Login page, click sign up
 $(".signin").on("click", function(){
-     
-    console.log("hello")
+    // sign in via google
     googleSignIn();
-   
-//  setTimeout(loadMainPage, 10000)
 
 })
-
+//load main page after login
  function loadMainPage() {
      window.location = 'main.html';
  }
