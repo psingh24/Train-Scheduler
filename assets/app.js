@@ -121,10 +121,13 @@ $(".signin").on("click", function(){
      
     console.log("hello")
     googleSignIn();
-  window.location = 'main.html';
+    setInterval(loadMainPage, 5000)
+ 
 
 })
 
- 
+ function loadMainPage() {
+     window.location = 'main.html';
+ }
 
 })
