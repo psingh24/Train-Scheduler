@@ -113,6 +113,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     // No user is signed in.
   }
 });
+
+location.reload(false)
 // $(document).on("click", ".signin", googleSignIn)
 
 $(".signin").on("click", function(){
